@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Present - Interactive Presentation</title>
+  <style>
+    :root{
+      --bg:#f7fbf6;
+      --card:#ffffff;
+      --primary:#2e7d32;
+      --primary-dark:#1b5e20;
+      --accent:#00897b;
+      --text:#1f2b24;
+      --muted:#607067;
+      --border:#d9e8d8;
+      --good:#2e8b57;
+      --bad:#c0392b;
+      --shadow:0 10px 25px rgba(30,90,40,.08);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial, Helvetica, sans-serif;background:linear-gradient(180deg,#edf8ee 0%, #f9fcf8 100%);color:var(--text)}
+    .deck{max-width:1000px;margin:0 auto;padding:24px 16px 100px}
+    .slide{display:none;background:var(--card);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);padding:28px;min-height:78vh}
+    .slide.active{display:block;animation:fade .35s ease}
+    @keyframes fade{from{opacity:.3;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    h1,h2,h3{margin:0 0 12px}
+    h1{font-size:clamp(28px,4vw,46px);color:var(--primary-dark)}
+    h2{font-size:clamp(22px,3vw,34px);color:var(--primary-dark)}
+    h3{font-size:20px;color:var(--accent)}
+    p, li{font-size:18px;line-height:1.6}
+    .lead{font-size:20px;color:var(--muted)}
+    .tag{display:inline-block;background:#e9f6ea;color:var(--primary-dark);padding:8px 12px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:16px}
+    .grid{display:grid;gap:16px}.grid-2{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{background:#fbfefb;border:1px solid var(--border);border-radius:18px;padding:18px}
+    .formula{background:#eef8ef;border-left:5px solid var(--primary);padding:14px 16px;border-radius:12px;font-size:18px;margin:10px 0}
+    table{width:100%;border-collapse:collapse;margin-top:10px}
+    th,td{border:1px solid var(--border);padding:12px;text-align:left;font-size:17px}
+    th{background:#eef8ef}
+    .example{background:#f5fcff;border:1px dashed #b9d7de;padding:12px 14px;border-radius:12px;margin:10px 0}
+    .exercise{background:#fffef8;border:1px solid #f0e2a6;border-radius:16px;padding:18px;margin:16px 0}
+    .question{font-weight:700;margin-bottom:12px}.options{display:grid;gap:10px}
+    button.option,.nav button,.check-btn{border:none;border-radius:12px;padding:12px 14px;font-size:16px;cursor:pointer}
+    button.option{background:#eef6ff;text-align:left} button.option:hover{background:#dfeeff}
+    .correct{background:#dff5e7 !important;color:#0c5c37}.incorrect{background:#fde4e0 !important;color:#8b261b}
+    .feedback{margin-top:10px;font-weight:700}
+    .fill-input{padding:10px 12px;border:1px solid var(--border);border-radius:10px;font-size:16px;width:220px;max-width:100%}
+    .check-btn{background:var(--primary);color:white;margin-left:8px}.check-btn:hover{background:var(--primary-dark)}
+    .result{margin-top:10px;font-weight:700}
+    .nav{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--border);padding:12px 16px;display:flex;justify-content:center;gap:12px;align-items:center}
+    .nav button{background:var(--primary);color:#fff;font-weight:700}.nav button:hover{background:var(--primary-dark)}
+    .counter{font-weight:700;color:var(--muted)}
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.pill{background:#edf7ff;color:#265c70;padding:10px 12px;border-radius:999px;font-weight:700}
+    @media (max-width:700px){.slide{padding:20px;min-height:82vh} p,li,th,td{font-size:16px} .lead{font-size:18px}}
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <section class="slide active">
+      <div class="tag">Unit 3 Grammar Presentation</div>
+      <h1>Simple Present</h1>
+      <p class="lead">Learn how to talk about care and prevention actions in English using the simple present. This presentation includes affirmative, negative, and question forms with examples and exercises.</p>
+      <div class="grid grid-2" style="margin-top:20px;">
+        <div class="card"><h3>Vocabulary focus</h3><p>recycle, reuse, save water, plant trees, clean, protect, help, prevent</p></div>
+        <div class="card"><h3>Main goal</h3><p>Describe habits, actions, and recommendations for the community.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Part 1</div>
+      <h2>What is the simple present?</h2>
+      <p>We use the simple present to talk about routines, habits, actions, and general facts.</p>
+      <div class="example">We recycle paper at school.</div>
+      <div class="example">Students save water in the community.</div>
+      <div class="example">People plant trees every year.</div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Part 2</div>
+      <h2>Affirmative sentences</h2>
+      <div class="formula"><strong>Subject + base verb + complement</strong></div>
+      <div class="formula"><strong>He / She / It + verb-s / verb-es + complement</strong></div>
+      <table>
+        <tr><th>Subject</th><th>Example</th></tr>
+        <tr><td>I / You / We / They</td><td>We recycle bottles.</td></tr>
+        <tr><td>He / She / It</td><td>She protects the river. / He helps the community.</td></tr>
+      </table>
+      <div class="example">The school reuses paper.</div>
+      <div class="example">We clean the park every week.</div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Part 3</div>
+      <h2>Negative sentences</h2>
+      <div class="formula"><strong>Subject + do not (don't) + base verb</strong></div>
+      <div class="formula"><strong>He / She / It + does not (doesn't) + base verb</strong></div>
+      <div class="example">We do not waste water.</div>
+      <div class="example">They do not burn trash.</div>
+      <div class="example">She does not litter in the street.</div>
+      <div class="example">He does not pollute the river.</div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Part 4</div>
+      <h2>Questions</h2>
+      <div class="formula"><strong>Do + subject + base verb?</strong></div>
+      <div class="formula"><strong>Does + he / she / it + base verb?</strong></div>
+      <div class="example">Do you recycle plastic?</div>
+      <div class="example">Do they save water at home?</div>
+      <div class="example">Does your community plant trees?</div>
+      <div class="example">Does she protect the environment?</div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Part 5</div>
+      <h2>Third person singular</h2>
+      <p>With <strong>he, she, it</strong>, add <strong>-s</strong> or <strong>-es</strong> to the verb in affirmative sentences.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Add -s</h3>
+          <p>help → helps</p>
+          <p>protect → protects</p>
+          <p>plant → plants</p>
+        </div>
+        <div class="card">
+          <h3>Add -es</h3>
+          <p>go → goes</p>
+          <p>watch → watches</p>
+          <p>do → does (in questions/negatives)</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Part 6</div>
+      <h2>Vocabulary in context</h2>
+      <div class="pill-row">
+        <span class="pill">recycle</span><span class="pill">reuse</span><span class="pill">save water</span><span class="pill">plant trees</span>
+        <span class="pill">clean</span><span class="pill">protect</span><span class="pill">help</span><span class="pill">prevent</span>
+      </div>
+      <div class="example">We recycle plastic and paper.</div>
+      <div class="example">They save water every day.</div>
+      <div class="example">My community plants trees in the rainy season.</div>
+      <div class="example">Students help clean the street.</div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Exercise 1</div>
+      <h2>Choose the correct answer</h2>
+      <div class="exercise quiz" data-answer="1">
+        <div class="question">1. She ___ the environment.</div>
+        <div class="options">
+          <button class="option">protect</button>
+          <button class="option">protects</button>
+          <button class="option">do protect</button>
+          <button class="option">don't protect</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="exercise quiz" data-answer="0">
+        <div class="question">2. We ___ water at school.</div>
+        <div class="options">
+          <button class="option">save</button>
+          <button class="option">saves</button>
+          <button class="option">does save</button>
+          <button class="option">saving</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Exercise 2</div>
+      <h2>Complete the sentences</h2>
+      <div class="exercise fill" data-answer="do">
+        <div class="question">1. ______ you recycle at home?</div>
+        <input class="fill-input" type="text" />
+        <button class="check-btn">Check</button>
+        <div class="result"></div>
+      </div>
+      <div class="exercise fill" data-answer="doesn't">
+        <div class="question">2. He ______ waste water.</div>
+        <input class="fill-input" type="text" />
+        <button class="check-btn">Check</button>
+        <div class="result"></div>
+      </div>
+      <div class="exercise fill" data-answer="plant">
+        <div class="question">3. We ______ trees in our community.</div>
+        <input class="fill-input" type="text" />
+        <button class="check-btn">Check</button>
+        <div class="result"></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Exercise 3</div>
+      <h2>Change to negative</h2>
+      <div class="card">
+        <p>1. We recycle paper. → <strong>We do not recycle paper.</strong></p>
+        <p>2. She protects the forest. → <strong>She does not protect the forest.</strong></p>
+        <p>3. They clean the park. → <strong>They do not clean the park.</strong></p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Final practice</div>
+      <h2>Write your own sentences</h2>
+      <ul>
+        <li>Write 2 affirmative sentences with the simple present.</li>
+        <li>Write 1 negative sentence.</li>
+        <li>Write 1 question about care or prevention actions.</li>
+      </ul>
+      <div class="example">Example: We recycle bottles. My community saves water. Do people protect the river?</div>
+      <p class="lead">Excellent! Now you can talk about actions and habits in English.</p>
+    </section>
+  </div>
+
+  <div class="nav">
+    <button id="prevBtn">◀ Previous</button>
+    <span class="counter" id="counter">1 / 10</span>
+    <button id="nextBtn">Next ▶</button>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const counter = document.getElementById('counter');
+    let current = 0;
+    function showSlide(index){ slides.forEach((s,i)=>s.classList.toggle('active', i===index)); counter.textContent = `${index+1} / ${slides.length}`; window.scrollTo({top:0, behavior:'smooth'}); }
+    document.getElementById('prevBtn').addEventListener('click', ()=>{ current=(current-1+slides.length)%slides.length; showSlide(current); });
+    document.getElementById('nextBtn').addEventListener('click', ()=>{ current=(current+1)%slides.length; showSlide(current); });
+    document.addEventListener('keydown',(e)=>{ if(e.key==='ArrowRight'){current=(current+1)%slides.length; showSlide(current);} if(e.key==='ArrowLeft'){current=(current-1+slides.length)%slides.length; showSlide(current);} });
+    document.querySelectorAll('.quiz').forEach(quiz=>{ const correctIndex=Number(quiz.dataset.answer); const buttons=quiz.querySelectorAll('.option'); const feedback=quiz.querySelector('.feedback'); buttons.forEach((btn,idx)=>{ btn.addEventListener('click',()=>{ buttons.forEach(b=>b.disabled=true); if(idx===correctIndex){ btn.classList.add('correct'); feedback.textContent='Correct!'; feedback.style.color='var(--good)'; } else { btn.classList.add('incorrect'); buttons[correctIndex].classList.add('correct'); feedback.textContent='Try again next time.'; feedback.style.color='var(--bad)'; } }); }); });
+    document.querySelectorAll('.fill').forEach(box=>{ const answer=box.dataset.answer.trim().toLowerCase(); const input=box.querySelector('.fill-input'); const btn=box.querySelector('.check-btn'); const result=box.querySelector('.result'); btn.addEventListener('click',()=>{ const val=input.value.trim().toLowerCase(); if(val===answer){ result.textContent='Correct!'; result.style.color='var(--good)'; } else { result.textContent=`Incorrect. Correct answer: ${box.dataset.answer}`; result.style.color='var(--bad)'; } }); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>There is / There are - Interactive Presentation</title>
+  <style>
+    :root{
+      --bg:#f6fafc;
+      --card:#ffffff;
+      --primary:#1565c0;
+      --primary-dark:#0d47a1;
+      --accent:#2e7d32;
+      --text:#1d2a35;
+      --muted:#5f6f7d;
+      --border:#dbe6ef;
+      --good:#2e8b57;
+      --bad:#c0392b;
+      --shadow:0 10px 25px rgba(25,70,120,.08);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial, Helvetica, sans-serif;background:linear-gradient(180deg,#eef6fb 0%, #f9fcfe 100%);color:var(--text)}
+    .deck{max-width:1000px;margin:0 auto;padding:24px 16px 100px}
+    .slide{display:none;background:var(--card);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);padding:28px;min-height:78vh}
+    .slide.active{display:block;animation:fade .35s ease}
+    @keyframes fade{from{opacity:.3;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    h1,h2,h3{margin:0 0 12px}
+    h1{font-size:clamp(28px,4vw,46px);color:var(--primary-dark)}
+    h2{font-size:clamp(22px,3vw,34px);color:var(--primary-dark)}
+    h3{font-size:20px;color:var(--accent)}
+    p, li{font-size:18px;line-height:1.6}
+    .lead{font-size:20px;color:var(--muted)}
+    .tag{display:inline-block;background:#e8f1fd;color:var(--primary-dark);padding:8px 12px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:16px}
+    .grid{display:grid;gap:16px}.grid-2{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{background:#fbfdff;border:1px solid var(--border);border-radius:18px;padding:18px}
+    .formula{background:#eef5ff;border-left:5px solid var(--primary);padding:14px 16px;border-radius:12px;font-size:18px;margin:10px 0}
+    table{width:100%;border-collapse:collapse;margin-top:10px}
+    th,td{border:1px solid var(--border);padding:12px;text-align:left;font-size:17px}
+    th{background:#eef5ff}
+    .example{background:#f8fcf8;border:1px dashed #b8d9bc;padding:12px 14px;border-radius:12px;margin:10px 0}
+    .exercise{background:#fffef8;border:1px solid #f0e2a6;border-radius:16px;padding:18px;margin:16px 0}
+    .question{font-weight:700;margin-bottom:12px}.options{display:grid;gap:10px}
+    button.option,.nav button,.check-btn{border:none;border-radius:12px;padding:12px 14px;font-size:16px;cursor:pointer}
+    button.option{background:#eef6ff;text-align:left} button.option:hover{background:#dfeeff}
+    .correct{background:#dff5e7 !important;color:#0c5c37}.incorrect{background:#fde4e0 !important;color:#8b261b}
+    .feedback{margin-top:10px;font-weight:700}
+    .fill-input{padding:10px 12px;border:1px solid var(--border);border-radius:10px;font-size:16px;width:220px;max-width:100%}
+    .check-btn{background:var(--primary);color:white;margin-left:8px}.check-btn:hover{background:var(--primary-dark)}
+    .result{margin-top:10px;font-weight:700}
+    .nav{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--border);padding:12px 16px;display:flex;justify-content:center;gap:12px;align-items:center}
+    .nav button{background:var(--primary);color:#fff;font-weight:700}.nav button:hover{background:var(--primary-dark)}
+    .counter{font-weight:700;color:var(--muted)}
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.pill{background:#edf7ff;color:#265c70;padding:10px 12px;border-radius:999px;font-weight:700}
+    @media (max-width:700px){.slide{padding:20px;min-height:82vh} p,li,th,td{font-size:16px} .lead{font-size:18px}}
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <section class="slide active">
+      <div class="tag">Unit 2 Grammar Presentation</div>
+      <h1>There is / There are</h1>
+      <p class="lead">Learn how to describe environmental problems and risks in a place using <strong>there is</strong> and <strong>there are</strong>. This presentation includes explanations, examples, and practice exercises.</p>
+      <div class="grid grid-2" style="margin-top:20px;">
+        <div class="card"><h3>Risk vocabulary</h3><p>pollution, trash, wildfire, fire, flood, danger, clean air, safe places</p></div>
+        <div class="card"><h3>Main goal</h3><p>Describe the existence of problems or conditions in a community.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Part 1</div>
+      <h2>What is the difference?</h2>
+      <div class="formula"><strong>There is</strong> = singular noun or uncountable noun</div>
+      <div class="formula"><strong>There are</strong> = plural noun</div>
+      <div class="example">There is a wildfire near the forest.</div>
+      <div class="example">There is pollution in the air.</div>
+      <div class="example">There are many problems in the community.</div>
+      <div class="example">There are safe places in the city.</div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Part 2</div>
+      <h2>Affirmative sentences</h2>
+      <div class="formula"><strong>There is + singular / uncountable noun</strong></div>
+      <div class="formula"><strong>There are + plural noun</strong></div>
+      <table>
+        <tr><th>Structure</th><th>Example</th></tr>
+        <tr><td>There is + singular noun</td><td>There is a fire in the forest.</td></tr>
+        <tr><td>There is + uncountable noun</td><td>There is trash in the river.</td></tr>
+        <tr><td>There are + plural noun</td><td>There are dangerous places in the town.</td></tr>
+      </table>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Part 3</div>
+      <h2>Negative sentences</h2>
+      <div class="formula"><strong>There is not (isn't)</strong></div>
+      <div class="formula"><strong>There are not (aren't)</strong></div>
+      <div class="example">There isn't clean water in the area.</div>
+      <div class="example">There isn't a safe road near the river.</div>
+      <div class="example">There aren't safe places during the wildfire.</div>
+      <div class="example">There aren't enough trees in the park.</div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Part 4</div>
+      <h2>Questions</h2>
+      <div class="formula"><strong>Is there + singular / uncountable noun?</strong></div>
+      <div class="formula"><strong>Are there + plural noun?</strong></div>
+      <div class="example">Is there pollution in the community? — Yes, there is.</div>
+      <div class="example">Is there a fire near the mountain? — No, there isn't.</div>
+      <div class="example">Are there floods in this region? — Yes, there are.</div>
+      <div class="example">Are there safe places here? — No, there aren't.</div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Part 5</div>
+      <h2>Vocabulary in context</h2>
+      <div class="pill-row">
+        <span class="pill">pollution</span><span class="pill">trash</span><span class="pill">wildfire</span><span class="pill">fire</span>
+        <span class="pill">flood</span><span class="pill">danger</span><span class="pill">clean air</span><span class="pill">safe places</span>
+      </div>
+      <div class="example">There is pollution near the factory.</div>
+      <div class="example">There is trash on the street.</div>
+      <div class="example">There are floods during the rainy season.</div>
+      <div class="example">There are safe places in the school.</div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Part 6</div>
+      <h2>Useful tips</h2>
+      <ul>
+        <li>Use <strong>there is</strong> for one thing: <em>There is a fire.</em></li>
+        <li>Use <strong>there are</strong> for two or more things: <em>There are many risks.</em></li>
+        <li>Use <strong>is there...?</strong> and <strong>are there...?</strong> for questions.</li>
+        <li>Use <strong>isn't</strong> and <strong>aren't</strong> for short negative forms.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Exercise 1</div>
+      <h2>Choose the correct answer</h2>
+      <div class="exercise quiz" data-answer="0">
+        <div class="question">1. ___ a wildfire near the forest.</div>
+        <div class="options">
+          <button class="option">There is</button>
+          <button class="option">There are</button>
+          <button class="option">Are there</button>
+          <button class="option">There isn't</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="exercise quiz" data-answer="1">
+        <div class="question">2. ___ many dangerous places in the city.</div>
+        <div class="options">
+          <button class="option">There is</button>
+          <button class="option">There are</button>
+          <button class="option">Is there</button>
+          <button class="option">There isn't</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Exercise 2</div>
+      <h2>Complete the sentences</h2>
+      <div class="exercise fill" data-answer="is">
+        <div class="question">1. There ______ pollution in the air.</div>
+        <input class="fill-input" type="text" />
+        <button class="check-btn">Check</button>
+        <div class="result"></div>
+      </div>
+      <div class="exercise fill" data-answer="are">
+        <div class="question">2. There ______ floods in the region.</div>
+        <input class="fill-input" type="text" />
+        <button class="check-btn">Check</button>
+        <div class="result"></div>
+      </div>
+      <div class="exercise fill" data-answer="Is">
+        <div class="question">3. ______ there a fire near the mountain?</div>
+        <input class="fill-input" type="text" />
+        <button class="check-btn">Check</button>
+        <div class="result"></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Exercise 3</div>
+      <h2>Change to negative</h2>
+      <div class="card">
+        <p>1. There is a safe place. → <strong>There isn't a safe place.</strong></p>
+        <p>2. There are clean streets. → <strong>There aren't clean streets.</strong></p>
+        <p>3. There is water in the river. → <strong>There isn't water in the river.</strong></p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="tag">Final practice</div>
+      <h2>Write your own sentences</h2>
+      <ul>
+        <li>Write 2 affirmative sentences with <strong>there is / there are</strong>.</li>
+        <li>Write 1 negative sentence.</li>
+        <li>Write 1 question about risks in your community.</li>
+      </ul>
+      <div class="example">Example: There is trash on the street. There are dangerous places near the river.</div>
+      <p class="lead">Excellent! Now you can describe risks and environmental problems in English.</p>
+    </section>
+  </div>
+
+  <div class="nav">
+    <button id="prevBtn">◀ Previous</button>
+    <span class="counter" id="counter">1 / 10</span>
+    <button id="nextBtn">Next ▶</button>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const counter = document.getElementById('counter');
+    let current = 0;
+    function showSlide(index){ slides.forEach((s,i)=>s.classList.toggle('active', i===index)); counter.textContent = `${index+1} / ${slides.length}`; window.scrollTo({top:0, behavior:'smooth'}); }
+    document.getElementById('prevBtn').addEventListener('click', ()=>{ current=(current-1+slides.length)%slides.length; showSlide(current); });
+    document.getElementById('nextBtn').addEventListener('click', ()=>{ current=(current+1)%slides.length; showSlide(current); });
+    document.addEventListener('keydown',(e)=>{ if(e.key==='ArrowRight'){current=(current+1)%slides.length; showSlide(current);} if(e.key==='ArrowLeft'){current=(current-1+slides.length)%slides.length; showSlide(current);} });
+    document.querySelectorAll('.quiz').forEach(quiz=>{ const correctIndex=Number(quiz.dataset.answer); const buttons=quiz.querySelectorAll('.option'); const feedback=quiz.querySelector('.feedback'); buttons.forEach((btn,idx)=>{ btn.addEventListener('click',()=>{ buttons.forEach(b=>b.disabled=true); if(idx===correctIndex){ btn.classList.add('correct'); feedback.textContent='Correct!'; feedback.style.color='var(--good)'; } else { btn.classList.add('incorrect'); buttons[correctIndex].classList.add('correct'); feedback.textContent='Try again next time.'; feedback.style.color='var(--bad)'; } }); }); });
+    document.querySelectorAll('.fill').forEach(box=>{ const answer=box.dataset.answer.trim().toLowerCase(); const input=box.querySelector('.fill-input'); const btn=box.querySelector('.check-btn'); const result=box.querySelector('.result'); btn.addEventListener('click',()=>{ const val=input.value.trim().toLowerCase(); if(val===answer){ result.textContent='Correct!'; result.style.color='var(--good)'; } else { result.textContent=`Incorrect. Correct answer: ${box.dataset.answer}`; result.style.color='var(--bad)'; } }); });
+  </script>
+</body>
+</html>
