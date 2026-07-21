@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 2: Problemas Ambientales y Riesgos - Interactiva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fef2f2;
+            background-image: radial-gradient(#fecaca 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .perspective { perspective: 1000px; }
+        .preserve-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+        .group:hover .group-hover\:rotate-y-180 { transform: rotateY(180deg); }
+        .smooth-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01); }
+    </style>
+</head>
+<body class="py-10 px-5 text-gray-800">
+
+    <div class="max-w-7xl mx-auto">
+
+        <!-- Header -->
+        <div class="text-center mb-16 space-y-4">
+            <span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Inglés I - UVEGro</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-red-900 tracking-tight">Environmental Problems & Risks</h1>
+            <p class="text-lg text-red-700 max-w-2xl mx-auto">Pasa el cursor (o toca) sobre cada tarjeta para descubrir su traducción y un ejemplo. Licenciatura en Educación Ambiental y Gestión de Riesgo.</p>
+        </div>
+
+        <!-- Section 1: Environmental Problems -->
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-gray-300 pb-2 flex items-center gap-2">
+            <span>🏭</span> Environmental Problems
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
+            <script>
+                const probsWords = [
+                    {en: "Pollution", es: "Contaminación", emoji: "🏭", ex: "The air has pollution."},
+                    {en: "Trash", es: "Basura", emoji: "🗑️", ex: "There is trash in the street."},
+                    {en: "Smoke", es: "Humo", emoji: "💨", ex: "The smoke is bad."},
+                    {en: "Waste", es: "Residuos", emoji: "🚮", ex: "Do not leave waste."},
+                    {en: "Deforestation", es: "Deforestación", emoji: "🪓", ex: "Deforestation kills trees."},
+                    {en: "Global warming", es: "Calentamiento global", emoji: "🌍", ex: "Global warming melts ice."},
+                    {en: "Climate change", es: "Cambio climático", emoji: "🌦️", ex: "Climate change is real."},
+                    {en: "Acid rain", es: "Lluvia ácida", emoji: "🌧️", ex: "Acid rain damages plants."},
+                    {en: "Contaminated water", es: "Agua contaminada", emoji: "🚰", ex: "Do not drink contaminated water."},
+                    {en: "Overpopulation", es: "Sobrepoblación", emoji: "🏙️", ex: "Overpopulation needs resources."}
+                ];
+                probsWords.forEach(word => {
+                    document.write(`
+                    <div class="group perspective h-48 cursor-pointer">
+                        <div class="relative preserve-3d group-hover:rotate-y-180 w-full h-full duration-500 transition-transform">
+                            <div class="absolute backface-hidden w-full h-full bg-white rounded-2xl smooth-shadow flex flex-col items-center justify-center p-4 border-b-4 border-gray-500">
+                                <div class="text-6xl mb-3 hover:scale-110 transition-transform duration-300">${word.emoji}</div>
+                                <h3 class="text-xl font-bold text-gray-800 text-center leading-tight">${word.en}</h3>
+                            </div>
+                            <div class="absolute backface-hidden rotate-y-180 w-full h-full bg-gray-50 rounded-2xl smooth-shadow flex flex-col items-center justify-center p-5 text-center border-b-4 border-gray-600">
+                                <h3 class="text-lg font-bold text-gray-800 uppercase tracking-wide leading-tight">${word.es}</h3>
+                                <div class="w-8 h-1 bg-gray-300 my-2 rounded"></div>
+                                <p class="text-sm text-gray-700 font-medium italic">"${word.ex}"</p>
+                            </div>
+                        </div>
+                    </div>
+                    `);
+                });
+            </script>
+        </div>
+
+        <!-- Section 2: Disasters & Risks -->
+        <h2 class="text-2xl font-bold text-red-800 mb-6 border-b-2 border-red-200 pb-2 flex items-center gap-2">
+            <span>⚠️</span> Disasters & Risks
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
+            <script>
+                const risksWords = [
+                    {en: "Fire", es: "Incendio", emoji: "🔥", ex: "The fire is hot."},
+                    {en: "Wildfire", es: "Incendio forestal", emoji: "🌲🔥", ex: "The wildfire destroys forests."},
+                    {en: "Flood", es: "Inundación", emoji: "🌊", ex: "The flood covers the road."},
+                    {en: "Drought", es: "Sequía", emoji: "🏜️", ex: "The drought dries the soil."},
+                    {en: "Earthquake", es: "Terremoto", emoji: "🫨", ex: "The earthquake shakes the ground."},
+                    {en: "Hurricane", es: "Huracán", emoji: "🌀", ex: "The hurricane brings strong winds."},
+                    {en: "Storm", es: "Tormenta", emoji: "⛈️", ex: "The storm is loud."},
+                    {en: "Landslide", es: "Deslizamiento", emoji: "⛰️", ex: "The landslide blocked the road."},
+                    {en: "Danger", es: "Peligro", emoji: "⚡", ex: "This area is in danger."},
+                    {en: "Risk", es: "Riesgo", emoji: "🎲", ex: "There is a risk of fire."}
+                ];
+                risksWords.forEach(word => {
+                    document.write(`
+                    <div class="group perspective h-48 cursor-pointer">
+                        <div class="relative preserve-3d group-hover:rotate-y-180 w-full h-full duration-500 transition-transform">
+                            <div class="absolute backface-hidden w-full h-full bg-white rounded-2xl smooth-shadow flex flex-col items-center justify-center p-4 border-b-4 border-red-500">
+                                <div class="text-6xl mb-3 hover:scale-110 transition-transform duration-300">${word.emoji}</div>
+                                <h3 class="text-xl font-bold text-gray-800 text-center leading-tight">${word.en}</h3>
+                            </div>
+                            <div class="absolute backface-hidden rotate-y-180 w-full h-full bg-red-50 rounded-2xl smooth-shadow flex flex-col items-center justify-center p-5 text-center border-b-4 border-red-600">
+                                <h3 class="text-lg font-bold text-red-800 uppercase tracking-wide leading-tight">${word.es}</h3>
+                                <div class="w-8 h-1 bg-red-200 my-2 rounded"></div>
+                                <p class="text-sm text-red-900 font-medium italic">"${word.ex}"</p>
+                            </div>
+                        </div>
+                    </div>
+                    `);
+                });
+            </script>
+        </div>
+
+        <!-- Section 3: Conditions & Actions -->
+        <h2 class="text-2xl font-bold text-orange-800 mb-6 border-b-2 border-orange-200 pb-2 flex items-center gap-2">
+            <span>🚨</span> Conditions & Actions
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
+            <script>
+                const actionWords = [
+                    {en: "Dangerous", es: "Peligroso", emoji: "☠️", ex: "The river is dangerous."},
+                    {en: "Unsafe", es: "Inseguro", emoji: "🚫", ex: "This bridge is unsafe."},
+                    {en: "Toxic", es: "Tóxico", emoji: "☣️", ex: "The waste is toxic."},
+                    {en: "Damaged", es: "Dañado", emoji: "🏚️", ex: "The house is damaged."},
+                    {en: "Destroyed", es: "Destruido", emoji: "💥", ex: "The forest is destroyed."},
+                    {en: "To pollute", es: "Contaminar", emoji: "😷", ex: "Cars pollute the air."},
+                    {en: "To destroy", es: "Destruir", emoji: "💣", ex: "Storms can destroy houses."},
+                    {en: "To burn", es: "Quemar", emoji: "🕯️", ex: "Do not burn trash."},
+                    {en: "To waste", es: "Desperdiciar", emoji: "🚰❌", ex: "We should not waste water."},
+                    {en: "To affect", es: "Afectar", emoji: "📉", ex: "Pollution affects health."}
+                ];
+                actionWords.forEach(word => {
+                    document.write(`
+                    <div class="group perspective h-48 cursor-pointer">
+                        <div class="relative preserve-3d group-hover:rotate-y-180 w-full h-full duration-500 transition-transform">
+                            <div class="absolute backface-hidden w-full h-full bg-white rounded-2xl smooth-shadow flex flex-col items-center justify-center p-4 border-b-4 border-orange-500">
+                                <div class="text-5xl mb-3 hover:scale-110 transition-transform duration-300">${word.emoji}</div>
+                                <h3 class="text-xl font-bold text-gray-800 text-center leading-tight">${word.en}</h3>
+                            </div>
+                            <div class="absolute backface-hidden rotate-y-180 w-full h-full bg-orange-50 rounded-2xl smooth-shadow flex flex-col items-center justify-center p-5 text-center border-b-4 border-orange-600">
+                                <h3 class="text-lg font-bold text-orange-800 uppercase tracking-wide leading-tight">${word.es}</h3>
+                                <div class="w-8 h-1 bg-orange-200 my-2 rounded"></div>
+                                <p class="text-sm text-orange-900 font-medium italic">"${word.ex}"</p>
+                            </div>
+                        </div>
+                    </div>
+                    `);
+                });
+            </script>
+        </div>
+
+    </div>
+</body>
+</html>
